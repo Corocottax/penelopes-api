@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 
-const gatosSchema = new mongoose.Schema({
+const gatosSchema = new mongoose.Schema(
+  {
     nombre: { type: String, required: true },
-    imagen: { type: String, required: true},
-    rating: { type: Number, required: true, max: 5, min: 0}
-}, {
-    collection: "gatos"
-});
+    imagen: { type: String, required: true },
+    rating: { type: Number, required: true, max: 5, min: 0 },
+    score: { type: Number, required: true },
+  },
+  {
+    collection: "gatos",
+  }
+);
 
 const Gato = mongoose.model("gatos", gatosSchema, "gatos");
 module.exports = Gato;
