@@ -6,7 +6,7 @@ const cors = require("cors")
 const server = express();
 
 connectDB();
-express.use(cors())
+server.use(cors())
 
 server.use(express.json());
 
