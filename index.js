@@ -1,10 +1,12 @@
 const express = require("express");
 const { connectDB } = require("./src/config/db");
 const gatosRoutes = require("./src/api/routes/gatos");
+const cors = require("cors")
 
 const server = express();
 
 connectDB();
+express.use(cors())
 
 server.use(express.json());
 
